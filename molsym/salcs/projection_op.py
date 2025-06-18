@@ -77,7 +77,8 @@ def ProjectionOp(symtext, fxn_set, project_Eckart=True, manual_proj = None):
     numred = len(fxn_set)
     salcs = SALCs(symtext, fxn_set)
     orthogonalize = False
-    num_salcs_to_id = manual_proj.shape[1]
+    if manual_proj is not None: 
+        num_salcs_to_id = manual_proj.shape[1]
     list_salc_ids = []
     if type(manual_proj) is not np.ndarray:
         list_salc_ids = None
